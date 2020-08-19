@@ -1,5 +1,6 @@
 from collections import deque
 
+
 def supermarket():
     queue = deque()
     input_line = input()
