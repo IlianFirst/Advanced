@@ -1,0 +1,27 @@
+
+
+# Stacks Solution
+def reverse_string(text):
+    stack = []
+    while text:
+        stack.append(text[-1])
+        text = text[0:-1]
+    return "".join(stack)
+
+print(reverse_string(input()))
+
+# Another stacks solution
+# def reverse_string(text):
+#     stack = []
+#     for ch in text:
+#         stack.append(ch)
+#
+#     reversed_text = []
+#     while stack:
+#         reversed_text.append(stack.pop())
+#     return "".join(reversed_text)
+# print(reverse_string(input()))
+
+# Easiest solution
+# print(input()[::-1])
+
