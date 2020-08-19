@@ -1,0 +1,20 @@
+from collections import deque
+
+
+def hot_potato(people, tosses_count):
+    queue = deque(people)
+    index = 0
+    while queue:
+        index += 1
+        person = queue.popleft()
+        if index == tosses_count:
+            if queue:
+                index = 0
+                print(f"Removed {person}")
+            else:
+                print(f"Last is {person}")
+        else:
+            queue.append(person)
+
+
+hot_potato(input().split(), int(input()))
