@@ -1,0 +1,4 @@
+def integers_reverse(integers):
+    while integers:
+        print(integers.pop(), end = ' ')
+integers_reverse(input().split())
