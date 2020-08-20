@@ -1,0 +1,29 @@
+sequence = input()
+stack = []
+closing_brackets_list = []
+match_dict = {
+    '{': '}',
+    '[': ']',
+    '(': ')'
+}
+is_valid = True
+for element in sequence:
+    if element in '{[(':
+        stack.append(element)
+    elif element in '}])':
+        closing_brackets_list.append(element)
+        if stack:
+            current = stack[-1]
+            if match_dict[current] == element:
+                stack.pop()
+            else:
+                is_valid = False
+                break
+        else:
+            is_valid = False
+            break
+
+if is_valid:
+    print("YES")
+else:
+    print("NO")
