@@ -1,0 +1,23 @@
+from collections import deque
+
+
+def fast_food():
+    capacity = int(input())
+    queue = deque(input().split())
+    print(max(list(map(int, queue))))
+    while True:
+        if not queue:
+            print("Orders complete")
+            break
+        elif capacity - int(queue[0]) >= 0:
+            capacity -= int(queue[0])
+            queue.popleft()
+
+        else:
+            print("Orders left:", end=" ")
+            while queue:
+                print(queue.popleft(), end = " ")
+            break
+
+
+fast_food()
