@@ -1,0 +1,22 @@
+def max_and_min_element():
+    stack = []
+    queries_count = int(input())
+    for _ in range(queries_count):
+        query = list(map(int,input().split()))
+        if query[0] == 1:
+            stack.append(int(query[1]))
+        if stack:
+            if query[0] == 2:
+                stack.pop()
+            elif query[0] == 3:
+                print(max(stack))
+            elif query[0] == 4:
+                print(min(stack))
+    sorted_stack = []
+    while stack:
+        sorted_stack.append(stack.pop())
+    print(", ".join(map(str, sorted_stack)))
+
+
+max_and_min_element()
+
