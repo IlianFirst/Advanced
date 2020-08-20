@@ -1,0 +1,16 @@
+def fashion_boutique(stack, capacity):
+    sum = 0
+    racks = 1
+    while stack:
+
+        if sum + stack[-1] > capacity:
+            racks += 1
+            sum = 0
+        else:
+            sum += stack[-1]
+            stack.pop()
+
+    return racks
+
+
+print(fashion_boutique(list(map(int, (input().split()))), int(input())))
