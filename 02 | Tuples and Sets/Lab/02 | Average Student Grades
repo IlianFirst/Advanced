@@ -1,0 +1,15 @@
+grades = int(input())
+
+grades_dict = {}
+for _ in range(grades):
+    (name, grade) = input().split(" ")
+    if name not in grades_dict:
+        grades_dict[name] = []
+    grades_dict[name].append(grade)
+
+
+for key,values in grades_dict.items():
+    print(f"{key} ->", end = ' ')
+    for grade in values:
+        print('%.2f' % float(grade), end = ' ')
+    print(f"(avg: {'%.2f' % (sum(map(float, values)) / len(values))})")
