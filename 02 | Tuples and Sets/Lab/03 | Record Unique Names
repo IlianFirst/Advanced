@@ -1,0 +1,4 @@
+names_count = int(input())
+names = set()
+[names.add(input()) for _ in range(names_count)]
+[print(name) for name in names]
