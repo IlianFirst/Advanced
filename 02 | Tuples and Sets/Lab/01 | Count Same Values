@@ -1,0 +1,7 @@
+values = (input().split(" "))
+output_values = []
+for value in values:
+    if value in output_values:
+        continue
+    output_values.append(value)
+    print(f"{'%.1f' % float(value)} - {values.count(value)} times")
