@@ -1,0 +1,24 @@
+n = int(input())
+guests = set()
+[guests.add(input()) for _ in range(n)]
+
+till_end = input()
+while till_end != "END":
+    guests.remove(till_end)
+    till_end = input()
+
+vips = set()
+normal_guests = set()
+for guest in guests:
+    if guest[0].isdigit():
+        vips.add(guest)
+    else:
+        normal_guests.add(guest)
+
+vips = sorted(vips)
+normal_guests = sorted(normal_guests)
+print(len(vips) + len(normal_guests))
+for vip in vips:
+    print(vip)
+for normal_guest in normal_guests:
+    print(normal_guest)
