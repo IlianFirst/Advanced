@@ -1,0 +1,13 @@
+(n, m) = map(int, input().split())
+
+set_n = set()
+set_m = set()
+for _ in range(n):
+    number = input()
+    set_n.add(number)
+
+for _ in range(m):
+    number = input()
+    set_m.add(number)
+
+print("\n".join(set_n & set_m))
