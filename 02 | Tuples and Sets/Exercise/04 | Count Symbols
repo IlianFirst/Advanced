@@ -1,0 +1,13 @@
+string = input()
+characters_dict = {}
+
+for element in string:
+    if element not in characters_dict:
+        characters_dict[element] = 1
+        continue
+    characters_dict[element] += 1
+
+characters_dict = dict(sorted(characters_dict.items(), key=lambda x: x[0]))
+
+for (key, value) in characters_dict.items():
+    print(f"{key}: {value} time/s")
