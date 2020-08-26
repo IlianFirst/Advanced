@@ -1,0 +1,14 @@
+input_line = input()
+phonebook = {}
+while input_line.isdigit() is False:
+    (contact, number) = input_line.split("-")
+    phonebook[contact] = number
+    input_line = input()
+
+n = int(input_line)
+for _ in range(n):
+    contact = input()
+    if contact not in phonebook:
+        print(f"Contact {contact} does not exist.")
+    else:
+        print(f"{contact} -> {phonebook[contact]}")
