@@ -1,0 +1,12 @@
+(rows, columns) = map(int, input().split(', '))
+
+matrix = []
+for _ in range(rows):
+    row = [int(i) for i in input().split()]
+    matrix.append(row)
+
+for column in range(columns):
+    result = 0
+    for row in range(rows):
+        result += matrix[row][column]
+    print(result)
