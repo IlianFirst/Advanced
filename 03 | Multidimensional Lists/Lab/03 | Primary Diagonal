@@ -1,0 +1,11 @@
+N = int(input())
+matrix = []
+for _ in range(N):
+    row = [int(i) for i in input().split()]
+    matrix.append(row)
+
+result = 0
+for i in range(len(matrix)):
+    result += matrix[i][i]
+
+print(result)
