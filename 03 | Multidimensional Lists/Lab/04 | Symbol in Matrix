@@ -1,0 +1,22 @@
+N = int(input())
+
+matrix = []
+for _ in range(N):
+    row = [line for line in input()]
+    matrix.append(row)
+
+symbol = input()
+
+is_found = False
+for row in range(N):
+    if is_found is True:
+        break
+    for col in range(N):
+        if matrix[row][col] == symbol:
+            print(f"({row}, {col})")
+            is_found = True
+            break
+if is_found is False:
+    print(f"{symbol} does not occur in the matrix")
+
+
