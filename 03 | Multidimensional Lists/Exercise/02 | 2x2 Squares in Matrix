@@ -1,17 +1,14 @@
-N = int(input())
+(row_count, column_count) = map(int, input().split())
 
 matrix = []
-for _ in range(N):
-    row = [int(i) for i in input().split()]
+for _ in range(row_count):
+    row = [i for i in input().split()]
     matrix.append(row)
 
+squares = 0
+for row in range(row_count - 1):
+    for col in range(column_count - 1):
+        if matrix[row][col] == matrix[row][col+1] == matrix[row+1][col] == matrix[row+1][col+1]:
+            squares += 1
 
-sum_primary_diagonal = 0
-for i in range(len(matrix)):
-    sum_primary_diagonal += matrix[i][i]
-
-sum_secondary_diagonal = 0
-for i in range(len(matrix)):
-    sum_secondary_diagonal += matrix[i][len(matrix)-i-1]
-
-print(abs(sum_primary_diagonal-sum_secondary_diagonal))
+print(squares)
