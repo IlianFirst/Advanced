@@ -1,0 +1,22 @@
+(rows_count, columns_count) = map(int, input().split())
+
+matrix = []
+for _ in range(rows_count):
+    row = [i for i in input().split()]
+    matrix.append(row)
+
+input_line = input()
+while input_line != "END":
+    args = input_line.split()
+    if args[0] != 'swap' or len(args)<5 or len(args)>5 or int(args[1]) > rows_count-1 or int(args[3]) > rows_count-1 or int(args[2]) > columns_count-1 or int(args[4]) > columns_count-1:
+        print("Invalid input!")
+        input_line = input()
+        continue
+    row1 = int(args[1])
+    col1 = int(args[2])
+    row2 = int(args[3])
+    col2 = int(args[4])
+    matrix[row1][col1], matrix[row2][col2] = matrix[row2][col2], matrix[row1][col1]
+    for i in range(len(matrix)):
+        print(" ".join(matrix[i]))
+    input_line = input()
