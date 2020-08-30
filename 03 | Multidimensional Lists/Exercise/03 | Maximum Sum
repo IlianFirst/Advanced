@@ -1,17 +1,23 @@
-N = int(input())
+(N, M) = map(int, input().split())
 
 matrix = []
 for _ in range(N):
     row = [int(i) for i in input().split()]
     matrix.append(row)
 
+best_sum = -1
+square = []
+for row in range(N - 2):
+    for col in range(M - 2):
+        if best_sum < matrix[row][col] + matrix[row][col + 1] + matrix[row][col + 2] + matrix[row + 1][col] + matrix[row + 1][col + 1] + matrix[row + 1][col + 2] + matrix[row + 2][col] + matrix[row + 2][col + 1] + matrix[row + 2][col + 2]:
+            best_sum = matrix[row][col] + matrix[row][col + 1] + matrix[row][col + 2] + matrix[row + 1][col] + matrix[row + 1][col + 1] + matrix[row + 1][col + 2] + matrix[row + 2][col] + matrix[row + 2][col + 1] + matrix[row + 2][col + 2]
+            square = [
+                      [matrix[row][col], matrix[row][col + 1], matrix[row][col + 2]],
+                      [matrix[row + 1][col], matrix[row + 1][col + 1], matrix[row + 1][col + 2]],
+                      [matrix[row + 2][col], matrix[row + 2][col + 1], matrix[row + 2][col + 2]]
+            ]
 
-sum_primary_diagonal = 0
-for i in range(len(matrix)):
-    sum_primary_diagonal += matrix[i][i]
-
-sum_secondary_diagonal = 0
-for i in range(len(matrix)):
-    sum_secondary_diagonal += matrix[i][len(matrix)-i-1]
-
-print(abs(sum_primary_diagonal-sum_secondary_diagonal))
+print(f"Sum = {best_sum}")
+print(" ".join(map(str, square[0])))
+print(" ".join(map(str, square[1])))
+print(" ".join(map(str, square[2])))
