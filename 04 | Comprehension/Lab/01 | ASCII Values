@@ -1,0 +1,2 @@
+values = input().split(", ")
+print({ch: ord(ch) for ch in values})
