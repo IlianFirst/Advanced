@@ -1,0 +1,2 @@
+text = int(input())
+print("".join([ch for ch in text if ch.lower() not in 'aouei']))
