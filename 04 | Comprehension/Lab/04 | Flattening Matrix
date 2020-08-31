@@ -1,0 +1,2 @@
+n = int(input())
+print([int(i) for _ in range(n) for i in input().split(", ")])
