@@ -1,0 +1,21 @@
+categories = {category: [] for category in input().split(", ")}
+N = int(input())
+total_amount = 0
+total_quality = 0
+for _ in range(N):
+    args = input().split(" - ")
+    category = args[0]
+    product = args[1]
+    quantity = int(args[2].split(";")[0].split(":")[1])
+    quality = int(args[2].split(";")[1].split(":")[1])
+
+    total_amount += quantity
+    total_quality += quality
+
+    if product not in categories[category]:
+        categories[category].append(product)
+
+
+print(f"Count of items: {total_amount}")
+print(f"Average quality: {'%.2f' % (total_quality/len(categories))}")
+print("\n".join([f'{category} -> {", ".join(categories[category])}' for category in categories]))
