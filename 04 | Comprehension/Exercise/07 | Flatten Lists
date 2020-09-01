@@ -1,0 +1,2 @@
+string_with_numbers = input()
+print(" ".join([i for j in string_with_numbers.split("|")[::-1] for i in j.split() if i != " "]))
