@@ -1,0 +1,21 @@
+N = int(input())
+matrix = [[int(x) for x in input().split()] for _ in range(N)]
+
+input_line = input()
+while input_line != "END":
+    args = input_line.split()
+    command = args[0]
+    row = int(args[1])
+    col = int(args[2])
+    value = int(args[3])
+    if (0 > row >= len(matrix) or row < 0) or (col >= len(matrix) or col < 0):
+        print("Invalid coordinates")
+        input_line = input()
+        continue
+    elif command == "Add":
+        matrix[row][col] += value
+    else:
+        matrix[row][col] -= value
+    input_line = input()
+
+print("\n".join([" ".join(map(str,[matrix[i][j] for j in range(N)])) for i in range(N)]))
