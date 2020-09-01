@@ -1,0 +1,4 @@
+(rows, columns) = map(int, input().split())
+
+result = [[f'{chr(row+97)}{chr(row+col+97)}{chr(row+97)}' for col in range(columns)] for row in range(rows)]
+print('\n'.join([" ".join(result[index]) for index in range(len(result))]))
