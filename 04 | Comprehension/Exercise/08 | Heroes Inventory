@@ -1,0 +1,14 @@
+names = {name: {} for name in input().split(", ")}
+
+input_line = input()
+while input_line !="End":
+    args = input_line.split("-")
+    name = args[0]
+    item = args[1]
+    cost = int(args[2])
+    if item not in names[name]:
+        names[name][item] = cost
+
+    input_line = input()
+
+print('\n'.join([f"{name} -> Items: {len(names[name])}, Cost: {sum(names[name].values())}" for name in names.keys()]))
