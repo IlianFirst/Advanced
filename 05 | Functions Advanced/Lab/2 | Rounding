@@ -1,0 +1,8 @@
+# Solution with func
+def round_func(x):
+    return round(float(x))
+
+print(list((map(round_func, input().split()))))
+
+# Shorter and better solution
+# print([round(float(x)) for x in input().split()])
