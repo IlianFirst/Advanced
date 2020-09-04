@@ -1,0 +1,13 @@
+def permutations(values, index):
+    if index == len(values):
+        print("".join(values))
+        return
+    permutations(values, index + 1)
+    for i in range(index + 1, len(values)):
+        values[index], values[i] = values[i], values[index]
+        permutations(values, index + 1)
+        values[index], values[i] = values[i], values[index]
+
+
+
+permutations(list(input()), 0)
