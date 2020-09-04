@@ -1,0 +1,6 @@
+def abs_values(values):
+    return [abs(x) for x in values]
+
+print(abs_values(map(float, input().split())))
+
+# print([abs(float(x)) for x in input().split()])
