@@ -1,0 +1,18 @@
+def operate(operation, *numbers):
+    if operation == '+':
+        return sum(numbers)
+    elif operation == '-':
+        result = 0 
+        for i in numbers:
+            result -= i
+        return result
+    elif operation == '*':
+        result = 1
+        for i in numbers:
+            result *= i
+        return result
+    else:
+        result = 1
+        for i in numbers:
+            result /= i
+        return result
