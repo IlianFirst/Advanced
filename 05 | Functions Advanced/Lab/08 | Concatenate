@@ -1,0 +1,5 @@
+def concatenate(*strings):
+    return ''.join(strings)
+
+# TEST
+# print(concatenate("Soft", "Uni", "Is", "Great", "!"))
