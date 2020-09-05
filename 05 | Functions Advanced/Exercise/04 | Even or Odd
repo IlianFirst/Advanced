@@ -1,0 +1,9 @@
+def even_odd(*numbers):
+    command = numbers[-1]
+    numbers = numbers[:-1]
+    if command == "even":
+        return list(filter(lambda x: int(x) % 2 == 0, numbers))
+    return list(filter(lambda x: int(x) % 2 == 1, numbers))
+
+
+# print(even_odd(1, 2, 3, 4, 5, 6, "even"))
