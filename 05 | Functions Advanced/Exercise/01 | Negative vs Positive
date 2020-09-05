@@ -1,0 +1,13 @@
+numbers = [int(i) for i in input().split()]
+sum_of_negative_numbers = sum(filter(lambda x: x < 0, numbers))
+sum_of_positive_numbers = sum(filter(lambda x: x >= 0, numbers))
+
+print(sum_of_negative_numbers)
+print(sum_of_positive_numbers)
+
+if  abs(sum_of_negative_numbers) > sum_of_positive_numbers:
+    print("The negatives are stronger than the positives")
+
+else:
+    print("The positives are stronger than the negatives")
+    
