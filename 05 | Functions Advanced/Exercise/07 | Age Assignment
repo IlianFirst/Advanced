@@ -1,0 +1,12 @@
+def age_assignment(*args, **kwargs):
+    name_age_dict = {}
+    for el in args:
+            name_age_dict[el] = ''
+    for el in kwargs:
+        for key in name_age_dict:
+            if key[0] == el:
+                name_age_dict[key] = kwargs[el]
+    return name_age_dict
+
+# print(age_assignment('Peter', 'George' , G=26, P=19))
+# print(age_assignment('Amy', 'Bill', 'Willy', W=36, A=22, B=61))
